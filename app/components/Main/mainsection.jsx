@@ -74,9 +74,9 @@ function MainSection() {
 
 
   return (
-    <div className="absolute right-0 flex-grow p-0 ml-60 h-[80%]  w-[80%] bg-[#fffffffa] text-[#767878]">
+    <div className="rigth-0 p-0 text-[#767878] mainSection">
       {/* <p className='relative font-bold text-4xl py-3 pt-5 pl-20'>The Future is AI</p> */}
-      <div className="relative bg-[#7678780F] px-8 py-3 w-[90%] h-[100%] ml-20 mt-5 rounded-lg">
+      <div className="relative mt-5 rounded-lg mainSectionContent">
         <div className=" font-bold text-3xl text-customGrayText">Translated Result</div>
         {/* <div className='textReponseHider'>
 
@@ -86,32 +86,43 @@ function MainSection() {
 
         </div>
 
-        <div className="flex mt-20 items-center">
+        <div className="flex mt-20 items-center selectOptions">
           <div className="flex items-center mr-2">
             Translate From:
           </div>
-          <div className="flex space-x-10 items-center ">
-            <p className='bg-[#d8ecec] px-4 py-1 rounded'>English</p>
+          <div className="flex space-x-10 items-center  ">
+          <select name="from" className='text-xs py-2 px-6 '>
+            <option value="volvo" defaultChecked>English</option>
+          </select>
+            {/* <p className='bg-[#d8ecec] px-4 py-1 rounded'>English</p> */}
             <p >to</p>
-            <p  className='bg-[#1389A3] text-white px-4 py-1 rounded' >Kikuyu</p>
+            {/* <p  className='bg-[#1389A3] text-white px-4 py-1 rounded' >Kikuyu</p> */}
+            <select name="from" className='text-xs py-2 px-6 '>
+              <option value="volvo" defaultChecked>Kikuyu</option>
+            </select>
            
           </div>
         </div>
         <div className="mt-3 relative flex items-start">
 
-    <div className=" relative mt-4 flex items-center text-neutral-500 text-opacity-75 text-base font-normal font-['Inter']">
-    <AiFillThunderbolt className=" absolute text-blue-500 text-lg ml-8" />
+    <div className=" relative w-[100%] py-2 mt-4 flex items-center text-neutral-500 text-opacity-75 text-base font-normal font-['Inter']">
+    <AiFillThunderbolt className=" absolute text-blue-500 text-lg ml-4 mt-1" />
       <input
         type="text"
-        className="outline-none w-[731px] h-[55px] bg-white rounded-[20px] shadow-lg inline-flex gap-[18.36px] pl-[60px] pr-0 py-[23px]"
-        placeholder="Type anything you want, literally anything!"
+        className="outline-none w-[100%] bg-white rounded-[8px] shadow-lg inline-flex gap-[18.36px] pr-0 py-[23px]"
+        placeholder="Type anything you want"
         value={inputText}
+        onKeyDown={(event) =>{
+          if(event.key === 'Enter') { 
+            handleTranslate()
+          }
+        }}  
         onChange={(e) => setInputText(e.target.value)}
 
       />
 
-          <div className="ml-3 w-[40px] h-[40px] bg-blue-500 rounded-[10px]  cursor-pointer shadow-lg inline-flex gap-[18.36px] pl-[10px] pr-0 py-[10px] items-center">
-            <AiOutlineSend className="text-white text-xl" onClick={handleTranslate} />
+          <div className="ml-3 w-[40px] h-[40px] bg-blue-500 rounded-[10px] sendButton cursor-pointer shadow-lg inline-flex gap-[18.36px] pl-[10px] pr-0 py-[10px] items-center">
+            <AiOutlineSend className="text-white text-xl" onClick={handleTranslate}/>
           </div>
             </div>
 

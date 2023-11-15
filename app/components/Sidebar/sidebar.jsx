@@ -3,11 +3,14 @@ import { RiHome5Line } from 'react-icons/ri';
 import { FcAbout } from 'react-icons/fc';
 import { TbSettings2 } from 'react-icons/tb';
 
-function Sidebar() {
+function Sidebar({showSideBar}) {
   return (
-    <div className="absolute h-full w-1/4 bg-[#1389A3] text-white flex flex-col items-start mt-0 rounded-r-lg sidebar">
-      <div className="relative mt-5 ml-10 w-40 flex flex-col flex-grow">
-        <div className="relative ml-0 flex flex-col">
+    <div className={showSideBar ? "absolute h-[100%]  bg-[#1389A3] w-[270px] text-white flex flex-col items-start mt-0 rounded-r-lg sidebar showSide" : 
+      "absolute h-[100%] w-[270px] bg-[#1389A3] text-white flex flex-col items-start mt-0 rounded-r-lg sidebar hideSide"
+    }
+    >
+      <div className="relative mt-5 ml-10 w-40 flex flex-col h-[100%]">
+        <div className="relative ml-0 flex flex-col h-[100%]">
           <div className="flex items-center p-5">
             <div className="flex items-center font-bold text-white">
               <div className="mr-2">

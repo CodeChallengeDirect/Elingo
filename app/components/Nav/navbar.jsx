@@ -5,7 +5,7 @@ import Sidebar from '../Sidebar/sidebar'; // Corrected import path
 
 
 
-function Navbar() {
+function Navbar({setShowSideBar, showSideBar}) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -21,8 +21,8 @@ function Navbar() {
             alt="Elingo Logo"
             className="w-135 h-57 py-3 justify-start"
           />
-          <div className="flex flex-row justify-end text-black font-bold text-3xl mr-4 mt-5">
-            <RiMenu3Fill onClick={toggleSidebar} />
+          <div className="flex flex-row justify-end text-black font-bold text-3xl mr-4 mt-5 cursor-pointer">
+            <RiMenu3Fill onClick={() => setShowSideBar(!showSideBar)}/>
           </div>
         </div>
       </div>

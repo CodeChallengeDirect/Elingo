@@ -18,15 +18,20 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 50px;
+  /* border: 2px solid rgb(73, 0, 128); */
+
+  /* background-color: rgb(236, 21, 21); */
 
 
 }
 .sidebar{
   border-radius: 0px 25px 25px 0px;
   z-index: 2;
-  top: 90px;
-  height: 84vh;
+  /* top: 90px; */
+  /* height: 100vh; */
   color: rgb(117, 119, 120);
   /* bottom: 0; */
   /* border: 2px solid red; */
@@ -71,5 +76,89 @@ body {
   /* background: linear-gradient(rgba(0, 0, 0, 0), #F7F7F7); */
   background: linear-gradient(rgba(0, 0, 0, 0), #ff0000);
   z-index: 1000;
-  border: 1px solid red;
+  border: 1px solid #1389A3;
 }
+select {
+  border: 1.5px solid #1389A3;
+  border-radius: 8px;
+  outline: 0;
+}
+
+select option{
+  padding: 8px 6px;
+  background-color: red;
+  border-radius: 0px;
+}
+.mainSection{
+  width: 90%;
+  margin-left: 200px;
+  /* border: 2px solid green; */
+}
+
+.mainSection .mainSectionContent{
+  width: 80%;
+  /* height: 100%; */
+  margin-left: 120px;
+  padding: 8px 70px;
+  /* height: 96vh; */
+  /* border: 1px solid red; */
+  background-color: #7678780F ;
+}
+input{
+  padding: 0px 0px 0px 40px;
+  height: 55px;
+}
+input:focus{
+  color: black;
+}
+.sendButton{
+  transition: 0.2s ease-in-out;
+}
+.sendButton:hover{
+  transform: scale(1.04);
+}
+.sendButton:active{
+  transform: scale(0.95);
+}
+
+@media all and (max-width: 990px){
+  .sidebar{
+    transition: 0.3s ease-in-out;
+
+  } 
+
+  .showSide{
+    left: 0px;
+  }
+
+  .hideSide{
+    left: -500px;
+  }
+  .mainSection{
+    width: 100%;
+    margin-left: 0;
+  }
+  .mainSection .mainSectionContent{
+    width: 100%;
+    /* height: 100%; */
+    margin-left: 0px;
+    padding: 10px 10px;
+    /* border: 1px solid red; */
+    /* height: 110vh; */
+    background-color: #7678780F ;
+  }
+  input{
+    font-size: 90%;
+    height: 30px;
+  }
+  .selectOptions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .selectOptions div:nth-child(1){
+    margin-bottom: 20px;
+  }
+}
+
